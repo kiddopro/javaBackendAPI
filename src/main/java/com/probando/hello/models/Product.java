@@ -1,6 +1,7 @@
 package com.probando.hello.models;
+import com.probando.hello.interfaces.ProductInterface;
 
-public class Product {
+public class Product implements ProductInterface{
 
     // variables
     private final int id;
@@ -40,6 +41,10 @@ public class Product {
 
     public double getProductPrice() {
         return this.price;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
 }
