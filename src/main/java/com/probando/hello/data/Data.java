@@ -4,9 +4,10 @@ package com.probando.hello.data;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.probando.hello.interfaces.DataInterface;
 import com.probando.hello.models.Product;
 
-public class Data {
+public class Data implements DataInterface {
 
     // variable
     List<Product> products = new ArrayList<>();
@@ -42,8 +43,13 @@ public class Data {
     }
 
     // add product
-    public void addProduct(Product product) {
-        products.add(product);
+    public boolean addProduct(Product product) {
+        try {
+            products.add(product);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     // delete product by id 
